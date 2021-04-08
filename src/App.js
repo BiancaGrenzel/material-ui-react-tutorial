@@ -14,6 +14,10 @@ import { green, orange } from '@material-ui/core/colors'
 import 'fontsource-roboto';
 
 import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
   root: {
@@ -27,18 +31,18 @@ const useStyles = makeStyles({
 })
 
 const theme = createMuiTheme({
-  typography:{
-    h2:{
+  typography: {
+    h2: {
       fontSize: 36,
-      marginBottom:15,
+      marginBottom: 15,
     }
   },
-  palette:{
-    primary:{
+  palette: {
+    primary: {
       main: green[400],
     },
-    secondary:{
-      main:orange[400]
+    secondary: {
+      main: orange[400]
     }
   }
 })
@@ -70,45 +74,61 @@ function CheckboxExample() {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <header className="App-header">
-          <Typography variant="h2" component="div">Welcome to MUI</Typography>
-          <Typography variant="subtitle1">Learn how to use Material Ui</Typography>
-          <ButtonStyled />
-          <TextField
-            variant="outlined"
-            color="secondary"
-            type="eail"
-            label="The Time"
-            placeholder="test@test.com">
-          </TextField>
-          <CheckboxExample></CheckboxExample>
-          <ButtonGroup
-            variant="contained"
-            color="primary">
-            <Button onClick={() => alert('Hello')} href="#"
-              startIcon={<SaveIcon />}>
-              Save
+      <Container maxWidth="xs">
+        <div className="App">
+          <header className="App-header">
+
+            <Typography variant="h2" component="div">Welcome to MUI</Typography>
+            <Typography variant="subtitle1">Learn how to use Material Ui</Typography>
+            <ButtonStyled />
+
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Paper style={{ height: 75, width: 50, }}></Paper>
+              </Grid>
+              <Grid item>
+                <Paper style={{ height: 75, width: 50, }}></Paper>
+              </Grid>
+              <Grid item>
+                <Paper style={{ height: 75, width: 50, }}></Paper>
+              </Grid>
+            </Grid>
+
+            <TextField
+              variant="outlined"
+              color="secondary"
+              type="eail"
+              label="The Time"
+              placeholder="test@test.com">
+            </TextField>
+            <CheckboxExample></CheckboxExample>
+            <ButtonGroup
+              variant="contained"
+              color="primary">
+              <Button onClick={() => alert('Hello')} href="#"
+                startIcon={<SaveIcon />}>
+                Save
         </Button>
-            <Button onClick={() => alert('Hello')} href="#"
-              startIcon={<DeleteIcon />}>
-              Discard
+              <Button onClick={() => alert('Hello')} href="#"
+                startIcon={<DeleteIcon />}>
+                Discard
         </Button>
-          </ButtonGroup>
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
+            </ButtonGroup>
+            <img src={logo} className="App-logo" alt="logo" />
+            <p>
+              Edit <code>src/App.js</code> and save to reload.
         </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
+            <a
+              className="App-link"
+              href="https://reactjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn React
         </a>
-        </header>
-      </div>
+          </header>
+        </div>
+      </Container>
     </ThemeProvider>
   );
 }
