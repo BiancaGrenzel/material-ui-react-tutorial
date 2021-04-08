@@ -19,6 +19,11 @@ import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/icons/Menu'
+
 const useStyles = makeStyles({
   root: {
     background: 'linear-gradient(45deg, #FE6b8b, #FF8E53)',
@@ -35,14 +40,6 @@ const theme = createMuiTheme({
     h2: {
       fontSize: 36,
       marginBottom: 15,
-    }
-  },
-  palette: {
-    primary: {
-      main: green[400],
-    },
-    secondary: {
-      main: orange[400]
     }
   }
 })
@@ -78,6 +75,20 @@ function App() {
         <div className="App">
           <header className="App-header">
 
+            <AppBar color="secondary">
+              <Toolbar>
+                <IconButton>
+                  <MenuIcon></MenuIcon>
+                </IconButton>
+                <Typography variant="h6">
+                  MUI Themeing
+                </Typography>
+                <Button>
+                  Login
+                </Button>
+              </Toolbar>
+            </AppBar>
+
             <Typography variant="h2" component="div">Welcome to MUI</Typography>
             <Typography variant="subtitle1">Learn how to use Material Ui</Typography>
             <ButtonStyled />
@@ -93,14 +104,6 @@ function App() {
                 <Paper style={{ height: 75, width: '100%', }}></Paper>
               </Grid>
             </Grid>
-
-            <TextField
-              variant="outlined"
-              color="secondary"
-              type="eail"
-              label="The Time"
-              placeholder="test@test.com">
-            </TextField>
             <CheckboxExample></CheckboxExample>
             <ButtonGroup
               variant="contained"
@@ -114,18 +117,6 @@ function App() {
                 Discard
         </Button>
             </ButtonGroup>
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-        </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-        </a>
           </header>
         </div>
       </Container>
